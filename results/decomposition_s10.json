@@ -1,0 +1,111 @@
+{
+ "budget": "s10",
+ "ceiling_fit": {
+  "a": 22.20388305194019,
+  "b": -0.2047426405688216,
+  "std": 5.27173853330159
+ },
+ "benefit_fit": {
+  "a": 13.298413239434048,
+  "b": -0.19192926461392892,
+  "std": 4.028407208402297
+ },
+ "rows": [
+  {
+   "condition": "ACDC fog",
+   "kind": "adverse",
+   "budget": "s10",
+   "vanilla": 58.25333595275879,
+   "actual": -2.4879813194274902,
+   "ceiling": 3.4071266651153564,
+   "pred": 2.1178933087129064,
+   "recoverability_gap": -1.28923335640245,
+   "signal_gap": 5.895107984542847,
+   "ceiling_resid_sd": -1.303140229455176
+  },
+  {
+   "condition": "ACDC night",
+   "kind": "adverse",
+   "budget": "s10",
+   "vanilla": 21.509335935115814,
+   "actual": 1.4270663261413574,
+   "ceiling": 5.160956084728241,
+   "pred": 9.170142211073316,
+   "recoverability_gap": 4.0091861263450745,
+   "signal_gap": 3.7338897585868835,
+   "ceiling_resid_sd": -2.3975105463090745
+  },
+  {
+   "condition": "ACDC rain",
+   "kind": "adverse",
+   "budget": "s10",
+   "vanilla": 43.45824718475342,
+   "actual": 0.32654106616973877,
+   "ceiling": 5.007129907608032,
+   "pred": 4.957503815853977,
+   "recoverability_gap": -0.04962609175405497,
+   "signal_gap": 4.6805888414382935,
+   "ceiling_resid_sd": -1.5742428818896068
+  },
+  {
+   "condition": "ACDC snow",
+   "kind": "adverse",
+   "budget": "s10",
+   "vanilla": 42.80759394168854,
+   "actual": 0.09278655052185059,
+   "ceiling": 5.357882380485535,
+   "pred": 5.082383214314088,
+   "recoverability_gap": -0.2754991661714463,
+   "signal_gap": 5.265095829963684,
+   "ceiling_resid_sd": -1.5329783145322624
+  },
+  {
+   "condition": "BDD rainy",
+   "kind": "adverse",
+   "budget": "s10",
+   "vanilla": 38.37819993495941,
+   "actual": -0.03899037837982178,
+   "ceiling": 6.953945755958557,
+   "pred": 5.932513548710953,
+   "recoverability_gap": -1.0214322072476039,
+   "signal_gap": 6.992936134338379,
+   "ceiling_resid_sd": -1.4022477128413684
+  },
+  {
+   "condition": "BDD snowy",
+   "kind": "adverse",
+   "budget": "s10",
+   "vanilla": 41.270774602890015,
+   "actual": 1.6307622194290161,
+   "ceiling": 9.036463499069214,
+   "pred": 5.377343819854152,
+   "recoverability_gap": -3.6591196792150615,
+   "signal_gap": 7.405701279640198,
+   "ceiling_resid_sd": -0.8948721854382472
+  },
+  {
+   "condition": "Foggy Zurich fog",
+   "kind": "adverse",
+   "budget": "s10",
+   "vanilla": 30.688297748565674,
+   "actual": 1.5084236860275269,
+   "ceiling": 5.846965312957764,
+   "pred": 7.408430820298547,
+   "recoverability_gap": 1.5614655073407837,
+   "signal_gap": 4.338541626930237,
+   "ceiling_resid_sd": -1.9108904130474562
+  },
+  {
+   "condition": "BDD clear",
+   "kind": "probe",
+   "budget": "s10",
+   "vanilla": 41.55827462673187,
+   "actual": 0.4623621702194214,
+   "ceiling": 6.652998924255371,
+   "pred": 5.322164151701698,
+   "recoverability_gap": -1.3308347725536729,
+   "signal_gap": 6.19063675403595,
+   "ceiling_resid_sd": -1.335827488149933
+  }
+ ]
+}

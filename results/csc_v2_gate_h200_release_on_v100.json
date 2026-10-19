@@ -1,0 +1,1 @@
+{"passed": true, "basis": "V100 gate (results/csc_v2_gate_v100.json: 40/40 deterministic conditions, max |delta| 0.015 <= 0.05) under the prereg other-GPU-class clause; released 2026-10-18 21:09:53 by user decision so idle H200s start. Unit 05 overwrites this file with the H200 gate when its vanilla finishes; on an H200 failure conc.txt is set to 0."}

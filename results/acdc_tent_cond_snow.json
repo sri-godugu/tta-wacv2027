@@ -1,0 +1,63 @@
+{
+  "config": {
+    "checkpoint": "runs/tcpr_deeplab_pdaonly/best.pth",
+    "backbone": "deeplabv3plus",
+    "num_classes": 19,
+    "texture_threshold": 0.45,
+    "lambda_cons": 0.3,
+    "pretrained": true,
+    "dataset": "acdc",
+    "data_root": "datasets/acdc",
+    "cs_root": null,
+    "condition": "snow",
+    "corruption_type": "fog",
+    "severity": 1,
+    "split": "val",
+    "fog_beta": "0.02",
+    "crop_h": 512,
+    "crop_w": 1024,
+    "use_pda": false,
+    "use_tent": true,
+    "K": 4,
+    "n_adapt_steps": 1,
+    "lr_pda": 0.001,
+    "norm_types": [
+      "bn"
+    ],
+    "clean_final": false,
+    "continual": false,
+    "restart_prob": 0.0,
+    "batch_size": 2,
+    "num_workers": 4,
+    "device": "cuda",
+    "results_json": "results/acdc_tent_cond_snow.json"
+  },
+  "elapsed_s": 29.52875518798828,
+  "metrics": {
+    "miou": 0.43577685952186584,
+    "per_class_iou": [
+      0.7067928314208984,
+      0.23911434412002563,
+      0.6295859813690186,
+      0.2957257628440857,
+      0.2982509434223175,
+      0.36698585748672485,
+      0.5831135511398315,
+      0.5418148636817932,
+      0.7744499444961548,
+      0.02048742026090622,
+      0.775547981262207,
+      0.42188671231269836,
+      0.03717545419931412,
+      0.7036211490631104,
+      0.3582649528980255,
+      0.041207633912563324,
+      0.6690546870231628,
+      0.46056339144706726,
+      0.35611701011657715
+    ],
+    "pixel_accuracy": 0.8007176518440247,
+    "mean_accuracy": 0.5771013498306274,
+    "mean_confidence": 0.9527301824092865
+  }
+}

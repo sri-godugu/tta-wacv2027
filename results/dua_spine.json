@@ -1,0 +1,99 @@
+{
+ "fit": {
+  "a": 9.219116543307315,
+  "b": -0.1500807969464714,
+  "std": 6.501652867475552,
+  "r2": 0.15797198843016091,
+  "n": 95
+ },
+ "points": [
+  {
+   "condition": "ACDC fog",
+   "kind": "adverse",
+   "vanilla": 58.25333595275879,
+   "adapted": 51.22942924499512,
+   "benefit": -7.023906707763672,
+   "pred": 0.47640945872674223,
+   "resid": -7.500316166490414,
+   "resid_sd": -1.1536014486424928,
+   "neighbors_pm3": 9
+  },
+  {
+   "condition": "ACDC night",
+   "kind": "adverse",
+   "vanilla": 21.509335935115814,
+   "adapted": 21.33648544549942,
+   "benefit": -0.17285048961639404,
+   "pred": 5.990978264375759,
+   "resid": -6.163828753992153,
+   "resid_sd": -0.9480402721631971,
+   "neighbors_pm3": 5
+  },
+  {
+   "condition": "ACDC rain",
+   "kind": "adverse",
+   "vanilla": 43.45824718475342,
+   "adapted": 41.346293687820435,
+   "benefit": -2.1119534969329834,
+   "pred": 2.696868171922776,
+   "resid": -4.808821668855759,
+   "resid_sd": -0.7396306396042517,
+   "neighbors_pm3": 7
+  },
+  {
+   "condition": "ACDC snow",
+   "kind": "adverse",
+   "vanilla": 42.80759394168854,
+   "adapted": 40.86373150348663,
+   "benefit": -1.9438624382019043,
+   "pred": 2.794518729177759,
+   "resid": -4.738381167379663,
+   "resid_sd": -0.7287963943881661,
+   "neighbors_pm3": 5
+  },
+  {
+   "condition": "BDD rainy",
+   "kind": "adverse",
+   "vanilla": 38.37819993495941,
+   "adapted": 37.709179520606995,
+   "benefit": -0.669020414352417,
+   "pred": 3.45928571169759,
+   "resid": -4.128306126050007,
+   "resid_sd": -0.6349625564757254,
+   "neighbors_pm3": 6
+  },
+  {
+   "condition": "BDD snowy",
+   "kind": "adverse",
+   "vanilla": 41.270774602890015,
+   "adapted": 41.766396164894104,
+   "benefit": 0.49562156200408936,
+   "pred": 3.0251658003073905,
+   "resid": -2.529544238303301,
+   "resid_sd": -0.3890617185911784,
+   "neighbors_pm3": 4
+  },
+  {
+   "condition": "Foggy Zurich fog",
+   "kind": "adverse",
+   "vanilla": 30.688297748565674,
+   "adapted": 30.720269680023193,
+   "benefit": 0.03197193145751953,
+   "pred": 4.613392360271975,
+   "resid": -4.5814204288144555,
+   "resid_sd": -0.7046547273744745,
+   "neighbors_pm3": 5
+  },
+  {
+   "condition": "BDD clear",
+   "kind": "probe",
+   "vanilla": 41.55827462673187,
+   "adapted": 41.424790024757385,
+   "benefit": -0.1334846019744873,
+   "pred": 2.982017567607075,
+   "resid": -3.1155021695815623,
+   "resid_sd": -0.4791861751289166,
+   "neighbors_pm3": 5
+  }
+ ]
+}

@@ -1,0 +1,43 @@
+{
+  "_note": "Fits + real-condition points, copied verbatim from the project's backbone_spine.json / decomposition_s10.json (exact run outputs). Real primary points: vanilla & benefit are the exact values from decomposition_s10.json (actual = PDA benefit @1 step).",
+  "fits": {
+    "primary": {"label": "DeepLabV3+/ResNet-50", "a": 13.298413239434046, "b": -0.19192926461392887, "std": 4.028407208402297, "r2": 0.44420369814376626, "n": 95, "bn_layers": 60, "mean_shortfall": -5.369657512619396, "n_below": 7},
+    "r101":    {"label": "DeepLabV3+/ResNet-101", "a": 18.45050516380383, "b": -0.2727172199575733, "std": 3.4059903472734154, "r2": 0.6894349361654708, "n": 95, "bn_layers": 111, "mean_shortfall": -6.541141093096308, "n_below": 7},
+    "fcn50":   {"label": "FCN/ResNet-50", "a": 13.063301561388368, "b": -0.19337825198111636, "std": 4.342145242259533, "r2": 0.41064912584015123, "n": 95, "bn_layers": 54, "mean_shortfall": -4.88388394219425, "n_below": 7}
+  },
+  "real": {
+    "primary": [
+      {"condition": "ACDC fog",         "short": "fog",   "dataset": "ACDC", "kind": "adverse", "vanilla": 58.25333595275879,  "benefit": -2.4879813194274902},
+      {"condition": "ACDC night",       "short": "night", "dataset": "ACDC", "kind": "adverse", "vanilla": 21.509335935115814, "benefit": 1.4270663261413574},
+      {"condition": "ACDC rain",        "short": "rain",  "dataset": "ACDC", "kind": "adverse", "vanilla": 43.45824718475342,  "benefit": 0.32654106616973877},
+      {"condition": "ACDC snow",        "short": "snow",  "dataset": "ACDC", "kind": "adverse", "vanilla": 42.80759394168854,  "benefit": 0.09278655052185059},
+      {"condition": "BDD rainy",        "short": "rainy", "dataset": "BDD",  "kind": "adverse", "vanilla": 38.37819993495941,  "benefit": -0.03899037837982178},
+      {"condition": "BDD snowy",        "short": "snowy", "dataset": "BDD",  "kind": "adverse", "vanilla": 41.270774602890015, "benefit": 1.6307622194290161},
+      {"condition": "Foggy Zurich fog", "short": "FZ fog","dataset": "FZ",   "kind": "adverse", "vanilla": 30.688297748565674, "benefit": 1.5084236860275269},
+      {"condition": "BDD clear",        "short": "clear", "dataset": "BDD",  "kind": "probe",   "vanilla": 41.55827462673187,  "benefit": 0.4623621702194214}
+    ],
+    "r101": [
+      {"condition": "ACDC fog",         "short": "fog",   "dataset": "ACDC", "kind": "adverse", "vanilla": 62.28625178337097,  "benefit": -1.4372050762176514},
+      {"condition": "ACDC night",       "short": "night", "dataset": "ACDC", "kind": "adverse", "vanilla": 25.057539343833923, "benefit": 0.679546594619751},
+      {"condition": "ACDC rain",        "short": "rain",  "dataset": "ACDC", "kind": "adverse", "vanilla": 48.77118468284607,  "benefit": -0.2528876066207886},
+      {"condition": "ACDC snow",        "short": "snow",  "dataset": "ACDC", "kind": "adverse", "vanilla": 49.742498993873596, "benefit": -0.883445143699646},
+      {"condition": "BDD rainy",        "short": "rainy", "dataset": "BDD",  "kind": "adverse", "vanilla": 44.307929277420044, "benefit": -0.2730369567871094},
+      {"condition": "BDD snowy",        "short": "snowy", "dataset": "BDD",  "kind": "adverse", "vanilla": 49.28790628910065,  "benefit": -0.813409686088562},
+      {"condition": "Foggy Zurich fog", "short": "FZ fog","dataset": "FZ",   "kind": "adverse", "vanilla": 38.9409601688385,   "benefit": -0.48561394214630127},
+      {"condition": "BDD clear",        "short": "clear", "dataset": "BDD",  "kind": "probe",   "vanilla": 48.23895990848541,  "benefit": -1.2733161449432373}
+    ],
+    "fcn50": [
+      {"condition": "ACDC fog",         "short": "fog",   "dataset": "ACDC", "kind": "adverse", "vanilla": 54.65766787528992,  "benefit": -1.1079192161560059},
+      {"condition": "ACDC night",       "short": "night", "dataset": "ACDC", "kind": "adverse", "vanilla": 21.28688097000122,  "benefit": 1.2113481760025024},
+      {"condition": "ACDC rain",        "short": "rain",  "dataset": "ACDC", "kind": "adverse", "vanilla": 43.40299665927887,  "benefit": 0.1086205244064331},
+      {"condition": "ACDC snow",        "short": "snow",  "dataset": "ACDC", "kind": "adverse", "vanilla": 42.134180665016174, "benefit": 0.4606276750564575},
+      {"condition": "BDD rainy",        "short": "rainy", "dataset": "BDD",  "kind": "adverse", "vanilla": 38.37289810180664,  "benefit": 0.18555223941802979},
+      {"condition": "BDD snowy",        "short": "snowy", "dataset": "BDD",  "kind": "adverse", "vanilla": 40.65282344818115,  "benefit": 0.4061400890350342},
+      {"condition": "Foggy Zurich fog", "short": "FZ fog","dataset": "FZ",   "kind": "adverse", "vanilla": 27.80122458934784,  "benefit": 4.106491804122925},
+      {"condition": "BDD clear",        "short": "clear", "dataset": "BDD",  "kind": "probe",   "vanilla": 40.95049202442169,  "benefit": 0.3235667943954468}
+    ]
+  },
+  "budget": {
+    "synthetic_means": {"PDA @1": 4.05026188022212, "PDA @10": 3.8331654197291325, "TENT @1": 2.3834953731612156, "TENT @10": 4.78588857148823, "oracle @1": 2.927374863310864, "oracle @10": 12.338316519009439}
+  }
+}

@@ -1,0 +1,10 @@
+# datasets and checkpoints are not redistributed
+datasets/
+runs/
+*.pth
+*.pt
+# local environments and caches
+envs/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/

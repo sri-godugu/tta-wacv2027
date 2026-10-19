@@ -1,0 +1,59 @@
+{
+  "config": {
+    "checkpoint": "runs/tcpr_pretrained/best.pth",
+    "backbone": "segformer",
+    "num_classes": 19,
+    "texture_threshold": 0.45,
+    "lambda_cons": 0.3,
+    "pretrained": true,
+    "dataset": "foggy",
+    "data_root": "datasets/foggy_cityscapes",
+    "cs_root": "datasets/cityscapes",
+    "condition": "all",
+    "corruption_type": "fog",
+    "severity": 1,
+    "split": "val",
+    "fog_beta": "0.005",
+    "crop_h": 512,
+    "crop_w": 1024,
+    "use_pda": true,
+    "K": 4,
+    "n_adapt_steps": 1,
+    "lr_pda": 0.001,
+    "norm_types": [
+      "bn",
+      "ln"
+    ],
+    "batch_size": 1,
+    "num_workers": 4,
+    "device": "",
+    "results_json": "results/foggy_bnln_beta0.005.json"
+  },
+  "elapsed_s": 165.31082725524902,
+  "metrics": {
+    "miou": 0.722245991230011,
+    "per_class_iou": [
+      0.9785143136978149,
+      0.8274229168891907,
+      0.8706191778182983,
+      0.5933077931404114,
+      0.534912645816803,
+      0.51659095287323,
+      0.57855224609375,
+      0.6978299021720886,
+      0.8713986873626709,
+      0.6102164387702942,
+      0.8643690943717957,
+      0.7462139129638672,
+      0.5306418538093567,
+      0.9268941283226013,
+      0.8019468784332275,
+      0.811323344707489,
+      0.7338224053382874,
+      0.5190792679786682,
+      0.7090185880661011
+    ],
+    "pixel_accuracy": 0.9420693516731262,
+    "mean_accuracy": 0.7995630502700806
+  }
+}

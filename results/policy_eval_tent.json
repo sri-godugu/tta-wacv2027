@@ -1,0 +1,78 @@
+{
+ "tau": 0.9742766726741791,
+ "method": "tent",
+ "points": [
+  {
+   "label": "ACDC fog",
+   "kind": "adverse",
+   "vanilla": 58.25333595275879,
+   "adapted": 58.2017719745636,
+   "conf": 0.960674524307251,
+   "adapt": true,
+   "gated": 58.2017719745636
+  },
+  {
+   "label": "ACDC night",
+   "kind": "adverse",
+   "vanilla": 21.509335935115814,
+   "adapted": 22.119025886058807,
+   "conf": 0.9275886315219807,
+   "adapt": true,
+   "gated": 22.119025886058807
+  },
+  {
+   "label": "ACDC rain",
+   "kind": "adverse",
+   "vanilla": 43.45824718475342,
+   "adapted": 44.18436288833618,
+   "conf": 0.9556236755847931,
+   "adapt": true,
+   "gated": 44.18436288833618
+  },
+  {
+   "label": "ACDC snow",
+   "kind": "adverse",
+   "vanilla": 42.80759394168854,
+   "adapted": 43.57477128505707,
+   "conf": 0.9530152976512909,
+   "adapt": true,
+   "gated": 43.57477128505707
+  },
+  {
+   "label": "BDD rainy",
+   "kind": "adverse",
+   "vanilla": 38.37819993495941,
+   "adapted": 38.8380229473114,
+   "conf": 0.9519565224647522,
+   "adapt": true,
+   "gated": 38.8380229473114
+  },
+  {
+   "label": "BDD snowy",
+   "kind": "adverse",
+   "vanilla": 41.270774602890015,
+   "adapted": 42.94498264789581,
+   "conf": 0.9458336873487992,
+   "adapt": true,
+   "gated": 42.94498264789581
+  },
+  {
+   "label": "Foggy Zurich fog",
+   "kind": "adverse",
+   "vanilla": 30.688297748565674,
+   "adapted": 31.586435437202454,
+   "conf": 0.950423201918602,
+   "adapt": true,
+   "gated": 31.586435437202454
+  },
+  {
+   "label": "BDD clear",
+   "kind": "probe",
+   "vanilla": 41.55827462673187,
+   "adapted": 42.53520369529724,
+   "conf": 0.9469581246376038,
+   "adapt": true,
+   "gated": 42.53520369529724
+  }
+ ]
+}

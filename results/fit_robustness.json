@@ -1,0 +1,354 @@
+{
+ "pdaonly": {
+  "linear (primary)": {
+   "resid_std": 4.028407208402297,
+   "n_below_7": 7,
+   "mean_resid": -5.369657512619396,
+   "mean_resid_sd": -1.332948044929413,
+   "n_below_no_bdd": 5,
+   "mean_resid_no_bdd": -5.573903412163972,
+   "per_condition": {
+    "ACDC fog": -4.605874628140404,
+    "ACDC night": -7.7430758849319545,
+    "ACDC rain": -4.630962749684242,
+    "ACDC snow": -4.9895966637922395,
+    "BDD rainy": -5.971503927090777,
+    "BDD snowy": -3.746581600425139,
+    "Foggy Zurich fog": -5.900007134271021
+   }
+  },
+  "quadratic": {
+   "resid_std": 4.005068776663508,
+   "n_below_7": 7,
+   "mean_resid": -5.71849870174578,
+   "mean_resid_sd": -1.4278153561471856,
+   "n_below_no_bdd": 5,
+   "mean_resid_no_bdd": -5.860204020120744,
+   "per_condition": {
+    "ACDC fog": -4.805331345752223,
+    "ACDC night": -7.620370080335093,
+    "ACDC rain": -5.153109449765153,
+    "ACDC snow": -5.5119334880170685,
+    "BDD rainy": -6.463786780827907,
+    "BDD snowy": -4.264684030788839,
+    "Foggy Zurich fog": -6.210275736734182
+   }
+  },
+  "Theil-Sen (robust)": {
+   "resid_std": 4.028618225582773,
+   "n_below_7": 7,
+   "mean_resid": -5.061233972797187,
+   "mean_resid_sd": -1.256320080333509,
+   "n_below_no_bdd": 5,
+   "mean_resid_no_bdd": -5.265177800087679,
+   "per_condition": {
+    "ACDC fog": -4.33870291495086,
+    "ACDC night": -7.395160725053284,
+    "ACDC rain": -4.331279430229001,
+    "ACDC snow": -4.688483560279213,
+    "BDD rainy": -5.660657410267394,
+    "BDD snowy": -3.4420913988745143,
+    "Foggy Zurich fog": -5.57226236992604
+   }
+  },
+  "LOESS (nonparametric)": {
+   "resid_std": 3.989636665487894,
+   "n_below_7": 7,
+   "mean_resid": -5.688817669901359,
+   "mean_resid_sd": -1.4258986837353198,
+   "n_below_no_bdd": 5,
+   "mean_resid_no_bdd": -5.8151876035059225,
+   "per_condition": {
+    "ACDC fog": -4.653312917929778,
+    "ACDC night": -7.698536921738807,
+    "ACDC rain": -4.962211721567105,
+    "ACDC snow": -5.342283254335944,
+    "BDD rainy": -6.534384488556164,
+    "BDD snowy": -4.211401183223737,
+    "Foggy Zurich fog": -6.4195932019579764
+   }
+  },
+  "drop_BDD": {
+   "n_below": 5,
+   "n": 5,
+   "mean_resid": -5.573903412163972,
+   "mean_resid_sd": -1.38364944848131
+  },
+  "drop_ACDC": {
+   "n_below": 3,
+   "n": 3,
+   "mean_resid": -5.206030887262313,
+   "mean_resid_sd": -1.2923298509653576
+  },
+  "drop_FZ": {
+   "n_below": 6,
+   "n": 6,
+   "mean_resid": -5.281265909010792,
+   "mean_resid_sd": -1.3110059722848602
+  }
+ },
+ "tent": {
+  "linear (primary)": {
+   "resid_std": 2.848752936779651,
+   "n_below_7": 7,
+   "mean_resid": -2.6344160412022055,
+   "mean_resid_sd": -0.9247611497612914,
+   "n_below_no_bdd": 5,
+   "mean_resid_no_bdd": -2.7861631685556922,
+   "per_condition": {
+    "ACDC fog": -1.304818461521891,
+    "ACDC night": -4.768419486173938,
+    "ACDC rain": -2.188024779285908,
+    "ACDC snow": -2.220005003520585,
+    "BDD rainy": -3.024599912649813,
+    "BDD snowy": -1.4854965329871677,
+    "Foggy Zurich fog": -3.449548112276138
+   }
+  },
+  "quadratic": {
+   "resid_std": 2.84860435480505,
+   "n_below_7": 7,
+   "mean_resid": -2.657856168410095,
+   "mean_resid_sd": -0.9330380205053048,
+   "n_below_no_bdd": 5,
+   "mean_resid_no_bdd": -2.8054009273966383,
+   "per_condition": {
+    "ACDC fog": -1.318220809005561,
+    "ACDC night": -4.760174359856994,
+    "ACDC rain": -2.2231100428745574,
+    "ACDC snow": -2.255103042361291,
+    "BDD rainy": -3.0576784970416386,
+    "BDD snowy": -1.5203100448458344,
+    "Foggy Zurich fog": -3.470396382884788
+   }
+  },
+  "Theil-Sen (robust)": {
+   "resid_std": 2.8814192858378638,
+   "n_below_7": 7,
+   "mean_resid": -2.007115559744936,
+   "mean_resid_sd": -0.696571849022418,
+   "n_below_no_bdd": 5,
+   "mean_resid_no_bdd": -2.155693129138873,
+   "per_condition": {
+    "ACDC fog": -1.1103616248630805,
+    "ACDC night": -3.7267447052111358,
+    "ACDC rain": -1.6524329359374077,
+    "ACDC snow": -1.6694108440720559,
+    "BDD rainy": -2.37187582496561,
+    "BDD snowy": -0.8994674475545783,
+    "Foggy Zurich fog": -2.6195155356106854
+   }
+  },
+  "LOESS (nonparametric)": {
+   "resid_std": 2.8394185865643675,
+   "n_below_7": 7,
+   "mean_resid": -2.7145024470817267,
+   "mean_resid_sd": -0.9560064373482225,
+   "n_below_no_bdd": 5,
+   "mean_resid_no_bdd": -2.8143963513303656,
+   "per_condition": {
+    "ACDC fog": -1.1810650437682995,
+    "ACDC night": -4.800642774389488,
+    "ACDC rain": -2.2243766110088012,
+    "ACDC snow": -2.275278400246785,
+    "BDD rainy": -3.287595739635215,
+    "BDD snowy": -1.6419396332850411,
+    "Foggy Zurich fog": -3.590618927238454
+   }
+  },
+  "drop_BDD": {
+   "n_below": 5,
+   "n": 5,
+   "mean_resid": -2.7861631685556922,
+   "mean_resid_sd": -0.9780290640806806
+  },
+  "drop_ACDC": {
+   "n_below": 3,
+   "n": 3,
+   "mean_resid": -2.653214852637706,
+   "mean_resid_sd": -0.9313601114307268
+  },
+  "drop_FZ": {
+   "n_below": 6,
+   "n": 6,
+   "mean_resid": -2.498560696023217,
+   "mean_resid_sd": -0.877071740327083
+  }
+ },
+ "dua": {
+  "linear (primary)": {
+   "resid_std": 6.501652867475551,
+   "n_below_7": 7,
+   "mean_resid": -4.921516935697965,
+   "mean_resid_sd": -0.7569639653199267,
+   "n_below_no_bdd": 5,
+   "mean_resid_no_bdd": -5.558553637106489,
+   "per_condition": {
+    "ACDC fog": -7.500316166490416,
+    "ACDC night": -6.16382875399215,
+    "ACDC rain": -4.80882166885576,
+    "ACDC snow": -4.738381167379664,
+    "BDD rainy": -4.128306126050007,
+    "BDD snowy": -2.529544238303302,
+    "Foggy Zurich fog": -4.581420428814455
+   }
+  },
+  "quadratic": {
+   "resid_std": 6.457647117132553,
+   "n_below_7": 7,
+   "mean_resid": -5.529911969565626,
+   "mean_resid_sd": -0.8563354220602135,
+   "n_below_no_bdd": 5,
+   "mean_resid_no_bdd": -6.0578750289134815,
+   "per_condition": {
+    "ACDC fog": -7.848177830333707,
+    "ACDC night": -5.949824202722203,
+    "ACDC rain": -5.719469462699057,
+    "ACDC snow": -5.649360546450229,
+    "BDD rainy": -4.986870002127617,
+    "BDD snowy": -3.4331386402643664,
+    "Foggy Zurich fog": -5.12254310236221
+   }
+  },
+  "Theil-Sen (robust)": {
+   "resid_std": 6.505332743509828,
+   "n_below_7": 7,
+   "mean_resid": -5.218479527251291,
+   "mean_resid_sd": -0.8021848740108811,
+   "n_below_no_bdd": 5,
+   "mean_resid_no_bdd": -5.853913465005957,
+   "per_condition": {
+    "ACDC fog": -8.016156617524572,
+    "ACDC night": -6.251252957285509,
+    "ACDC rain": -5.152158951700893,
+    "ACDC snow": -5.074132166182767,
+    "BDD rainy": -4.412412656117607,
+    "BDD snowy": -2.8473767096116456,
+    "Foggy Zurich fog": -4.775866632336042
+   }
+  },
+  "LOESS (nonparametric)": {
+   "resid_std": 6.425070760522506,
+   "n_below_7": 7,
+   "mean_resid": -5.512664550384277,
+   "mean_resid_sd": -0.8579928153096279,
+   "n_below_no_bdd": 5,
+   "mean_resid_no_bdd": -6.0254005892928335,
+   "per_condition": {
+    "ACDC fog": -7.414175341010235,
+    "ACDC night": -5.999959606508026,
+    "ACDC rain": -5.481519019768491,
+    "ACDC snow": -5.436961571270361,
+    "BDD rainy": -5.103407045780745,
+    "BDD snowy": -3.3582418604450233,
+    "Foggy Zurich fog": -5.794387407907051
+   }
+  },
+  "drop_BDD": {
+   "n_below": 5,
+   "n": 5,
+   "mean_resid": -5.558553637106489,
+   "mean_resid_sd": -0.8549446964345165
+  },
+  "drop_ACDC": {
+   "n_below": 3,
+   "n": 3,
+   "mean_resid": -3.746423597722588,
+   "mean_resid_sd": -0.5762263341471262
+  },
+  "drop_FZ": {
+   "n_below": 6,
+   "n": 6,
+   "mean_resid": -4.978199686845216,
+   "mean_resid_sd": -0.7656821716441686
+  }
+ },
+ "pseudo": {
+  "linear (primary)": {
+   "resid_std": 2.82448036764627,
+   "n_below_7": 7,
+   "mean_resid": -2.4166690797235524,
+   "mean_resid_sd": -0.855615463787925,
+   "n_below_no_bdd": 5,
+   "mean_resid_no_bdd": -2.5648816624592237,
+   "per_condition": {
+    "ACDC fog": -0.7983898130384377,
+    "ACDC night": -4.60060229729884,
+    "ACDC rain": -2.0940501855593814,
+    "ACDC snow": -1.9956485389655514,
+    "BDD rainy": -2.788152660865695,
+    "BDD snowy": -1.3041225849030544,
+    "Foggy Zurich fog": -3.3357174774339073
+   }
+  },
+  "quadratic": {
+   "resid_std": 2.824290205159112,
+   "n_below_7": 7,
+   "mean_resid": -2.390264481350306,
+   "mean_resid_sd": -0.8463239637994799,
+   "n_below_no_bdd": 5,
+   "mean_resid_no_bdd": -2.543210905671451,
+   "per_condition": {
+    "ACDC fog": -0.7832924716534477,
+    "ACDC night": -4.609890184135134,
+    "ACDC rain": -2.0545276912631105,
+    "ACDC snow": -1.9561116537320355,
+    "BDD rainy": -2.7508906303367975,
+    "BDD snowy": -1.2649062107580868,
+    "Foggy Zurich fog": -3.312232527573527
+   }
+  },
+  "Theil-Sen (robust)": {
+   "resid_std": 2.882037278774249,
+   "n_below_7": 7,
+   "mean_resid": -1.6678479494522827,
+   "mean_resid_sd": -0.578704502448917,
+   "n_below_no_bdd": 5,
+   "mean_resid_no_bdd": -1.8118619865064403,
+   "per_condition": {
+    "ACDC fog": -0.6229337509666246,
+    "ACDC night": -3.3028814630554413,
+    "ACDC rain": -1.4667106345502896,
+    "ACDC snow": -1.3484362138099235,
+    "BDD rainy": -2.005654224959109,
+    "BDD snowy": -0.6099714886746677,
+    "Foggy Zurich fog": -2.3183478701499234
+   }
+  },
+  "LOESS (nonparametric)": {
+   "resid_std": 2.8131300399534136,
+   "n_below_7": 7,
+   "mean_resid": -2.466329659339816,
+   "mean_resid_sd": -0.8767208142929146,
+   "n_below_no_bdd": 5,
+   "mean_resid_no_bdd": -2.566233312593002,
+   "per_condition": {
+    "ACDC fog": -0.6170414244454197,
+    "ACDC night": -4.66786706373769,
+    "ACDC rain": -2.079727165504176,
+    "ACDC snow": -2.0028780273109232,
+    "BDD rainy": -3.0151241959968385,
+    "BDD snowy": -1.4180168564168607,
+    "Foggy Zurich fog": -3.4636528819668033
+   }
+  },
+  "drop_BDD": {
+   "n_below": 5,
+   "n": 5,
+   "mean_resid": -2.5648816624592237,
+   "mean_resid_sd": -0.9080897469988866
+  },
+  "drop_ACDC": {
+   "n_below": 3,
+   "n": 3,
+   "mean_resid": -2.4759975744008855,
+   "mean_resid_sd": -0.8766205645338627
+  },
+  "drop_FZ": {
+   "n_below": 6,
+   "n": 6,
+   "mean_resid": -2.263494346771827,
+   "mean_resid_sd": -0.8013843440724884
+  }
+ }
+}

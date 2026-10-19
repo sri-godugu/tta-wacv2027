@@ -1,0 +1,62 @@
+{
+  "config": {
+    "checkpoint": "runs/tcpr_deeplab_fixedthresh/best.pth",
+    "backbone": "deeplabv3plus",
+    "num_classes": 19,
+    "texture_threshold": 0.68,
+    "lambda_cons": 0.3,
+    "pretrained": true,
+    "dataset": "foggy",
+    "data_root": "datasets/foggy_cityscapes",
+    "cs_root": "datasets/cityscapes",
+    "condition": "all",
+    "corruption_type": "fog",
+    "severity": 1,
+    "split": "val",
+    "fog_beta": "0.02",
+    "crop_h": 512,
+    "crop_w": 1024,
+    "use_pda": true,
+    "use_tent": false,
+    "K": 4,
+    "n_adapt_steps": 1,
+    "lr_pda": 0.001,
+    "norm_types": [
+      "bn"
+    ],
+    "clean_final": true,
+    "continual": false,
+    "restart_prob": 0.0,
+    "batch_size": 2,
+    "num_workers": 4,
+    "device": "",
+    "results_json": "results/foggy_dl_ft_s0_ct_beta0.02.json"
+  },
+  "elapsed_s": 71.30171251296997,
+  "metrics": {
+    "miou": 0.5751343965530396,
+    "per_class_iou": [
+      0.968680202960968,
+      0.763599157333374,
+      0.6614921689033508,
+      0.31907036900520325,
+      0.428353488445282,
+      0.39667171239852905,
+      0.42906200885772705,
+      0.6206566095352173,
+      0.5905301570892334,
+      0.5054861903190613,
+      0.5071189403533936,
+      0.6992578506469727,
+      0.5113910436630249,
+      0.8860859870910645,
+      0.5248790979385376,
+      0.6455639004707336,
+      0.359116792678833,
+      0.4436975121498108,
+      0.666839599609375
+    ],
+    "pixel_accuracy": 0.8612332940101624,
+    "mean_accuracy": 0.6465578079223633
+  }
+}

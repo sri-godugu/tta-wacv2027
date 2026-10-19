@@ -1,0 +1,223 @@
+{
+ "DeepLabV3+/R50 (primary)": {
+  "fit": {
+   "a": 13.298413239434046,
+   "b": -0.19192926461392887,
+   "std": 4.028407208402297,
+   "r2": 0.44420369814376626,
+   "n": 95,
+   "mean_benefit": 4.05026188022212
+  },
+  "bn_layers": 60
+ },
+ "DeepLabV3+/R101": {
+  "fit": {
+   "a": 18.45050516380383,
+   "b": -0.2727172199575733,
+   "std": 3.4059903472734154,
+   "r2": 0.6894349361654708,
+   "n": 95,
+   "mean_benefit": 4.097932867313686
+  },
+  "bn_layers": 111,
+  "points": [
+   {
+    "condition": "ACDC fog",
+    "kind": "adverse",
+    "dataset": "ACDC",
+    "vanilla": 62.28625178337097,
+    "adapted": 60.84904670715332,
+    "benefit": -1.4372050762176514,
+    "pred": 1.4639717358654565,
+    "resid": -2.901176812083108,
+    "resid_sd": -0.8517865631667383
+   },
+   {
+    "condition": "ACDC night",
+    "kind": "adverse",
+    "dataset": "ACDC",
+    "vanilla": 25.057539343833923,
+    "adapted": 25.737085938453674,
+    "benefit": 0.679546594619751,
+    "pred": 11.616882694975926,
+    "resid": -10.937336100356175,
+    "resid_sd": -3.2112058418227165
+   },
+   {
+    "condition": "ACDC rain",
+    "kind": "adverse",
+    "dataset": "ACDC",
+    "vanilla": 48.77118468284607,
+    "adapted": 48.51829707622528,
+    "benefit": -0.2528876066207886,
+    "pred": 5.149763263060667,
+    "resid": -5.402650869681455,
+    "resid_sd": -1.5862202527985492
+   },
+   {
+    "condition": "ACDC snow",
+    "kind": "adverse",
+    "dataset": "ACDC",
+    "vanilla": 49.742498993873596,
+    "adapted": 48.85905385017395,
+    "benefit": -0.883445143699646,
+    "pred": 4.8848691244522335,
+    "resid": -5.7683142681518795,
+    "resid_sd": -1.693579159074707
+   },
+   {
+    "condition": "BDD rainy",
+    "kind": "adverse",
+    "dataset": "BDD",
+    "vanilla": 44.307929277420044,
+    "adapted": 44.034892320632935,
+    "benefit": -0.2730369567871094,
+    "pred": 6.366969869189065,
+    "resid": -6.640006825976174,
+    "resid_sd": -1.9495084098789868
+   },
+   {
+    "condition": "BDD snowy",
+    "kind": "adverse",
+    "dataset": "BDD",
+    "vanilla": 49.28790628910065,
+    "adapted": 48.474496603012085,
+    "benefit": -0.813409686088562,
+    "pred": 5.008844383110906,
+    "resid": -5.822254069199468,
+    "resid_sd": -1.7094159042054642
+   },
+   {
+    "condition": "Foggy Zurich fog",
+    "kind": "adverse",
+    "dataset": "FZ",
+    "vanilla": 38.9409601688385,
+    "adapted": 38.4553462266922,
+    "benefit": -0.48561394214630127,
+    "pred": 7.830634764079598,
+    "resid": -8.316248706225899,
+    "resid_sd": -2.441653633247456
+   },
+   {
+    "condition": "BDD clear",
+    "kind": "probe",
+    "dataset": "BDD",
+    "vanilla": 48.23895990848541,
+    "adapted": 46.965643763542175,
+    "benefit": -1.2733161449432373,
+    "pred": 5.294910123916852,
+    "resid": -6.568226268860089,
+    "resid_sd": -1.9284336123025498
+   }
+  ],
+  "n_below": 7,
+  "n_adverse": 7,
+  "mean_resid_sd": -1.9204813948849453,
+  "mean_resid_raw": -6.541141093096308
+ },
+ "FCN/R50": {
+  "fit": {
+   "a": 13.063301561388368,
+   "b": -0.19337825198111636,
+   "std": 4.342145242259533,
+   "r2": 0.41064912584015123,
+   "n": 95,
+   "mean_benefit": 4.051144570112228
+  },
+  "bn_layers": 54,
+  "points": [
+   {
+    "condition": "ACDC fog",
+    "kind": "adverse",
+    "dataset": "ACDC",
+    "vanilla": 54.65766787528992,
+    "adapted": 53.54974865913391,
+    "benefit": -1.1079192161560059,
+    "pred": 2.4936972903003856,
+    "resid": -3.6016165064563914,
+    "resid_sd": -0.8294555583733099
+   },
+   {
+    "condition": "ACDC night",
+    "kind": "adverse",
+    "dataset": "ACDC",
+    "vanilla": 21.28688097000122,
+    "adapted": 22.498229146003723,
+    "benefit": 1.2113481760025024,
+    "pred": 8.946881729279442,
+    "resid": -7.735533553276939,
+    "resid_sd": -1.7815004155069627
+   },
+   {
+    "condition": "ACDC rain",
+    "kind": "adverse",
+    "dataset": "ACDC",
+    "vanilla": 43.40299665927887,
+    "adapted": 43.5116171836853,
+    "benefit": 0.1086205244064331,
+    "pred": 4.670105936674787,
+    "resid": -4.561485412268354,
+    "resid_sd": -1.0505142407200276
+   },
+   {
+    "condition": "ACDC snow",
+    "kind": "adverse",
+    "dataset": "ACDC",
+    "vanilla": 42.134180665016174,
+    "adapted": 42.59480834007263,
+    "benefit": 0.4606276750564575,
+    "pred": 4.915467355730989,
+    "resid": -4.454839680674532,
+    "resid_sd": -1.0259536317021851
+   },
+   {
+    "condition": "BDD rainy",
+    "kind": "adverse",
+    "dataset": "BDD",
+    "vanilla": 38.37289810180664,
+    "adapted": 38.55845034122467,
+    "benefit": 0.18555223941802979,
+    "pred": 5.642817603011502,
+    "resid": -5.457265363593472,
+    "resid_sd": -1.25681317853699
+   },
+   {
+    "condition": "BDD snowy",
+    "kind": "adverse",
+    "dataset": "BDD",
+    "vanilla": 40.65282344818115,
+    "adapted": 41.05896353721619,
+    "benefit": 0.4061400890350342,
+    "pred": 5.201929624882157,
+    "resid": -4.795789535847123,
+    "resid_sd": -1.104474693562191
+   },
+   {
+    "condition": "Foggy Zurich fog",
+    "kind": "adverse",
+    "dataset": "FZ",
+    "vanilla": 27.80122458934784,
+    "adapted": 31.907716393470764,
+    "benefit": 4.106491804122925,
+    "pred": 7.687149347365853,
+    "resid": -3.5806575432429284,
+    "resid_sd": -0.8246286900757038
+   },
+   {
+    "condition": "BDD clear",
+    "kind": "probe",
+    "dataset": "BDD",
+    "vanilla": 40.95049202442169,
+    "adapted": 41.27405881881714,
+    "benefit": 0.3235667943954468,
+    "pred": 5.1443669959390546,
+    "resid": -4.820800201543608,
+    "resid_sd": -1.1102346726280847
+   }
+  ],
+  "n_below": 7,
+  "n_adverse": 7,
+  "mean_resid_sd": -1.124762915496767,
+  "mean_resid_raw": -4.88388394219425
+ }
+}

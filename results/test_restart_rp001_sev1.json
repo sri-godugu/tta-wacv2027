@@ -1,0 +1,63 @@
+{
+  "config": {
+    "checkpoint": "runs/tcpr_pretrained/best.pth",
+    "backbone": "segformer",
+    "num_classes": 19,
+    "texture_threshold": 0.45,
+    "lambda_cons": 0.3,
+    "pretrained": true,
+    "dataset": "cityscapes_c",
+    "data_root": "datasets/cityscapes_c",
+    "cs_root": "datasets/cityscapes",
+    "condition": "all",
+    "corruption_type": "all",
+    "severity": 1,
+    "split": "val",
+    "fog_beta": "0.02",
+    "crop_h": 512,
+    "crop_w": 1024,
+    "use_pda": true,
+    "K": 4,
+    "n_adapt_steps": 1,
+    "lr_pda": 0.001,
+    "norm_types": [
+      "bn",
+      "gn",
+      "ln"
+    ],
+    "clean_final": false,
+    "continual": true,
+    "restart_prob": 0.001,
+    "batch_size": 1,
+    "num_workers": 4,
+    "device": "",
+    "results_json": "results/test_restart_rp001_sev1.json"
+  },
+  "elapsed_s": 3486.818022966385,
+  "metrics": {
+    "miou": 0.5510133504867554,
+    "per_class_iou": [
+      0.9560747742652893,
+      0.6870861649513245,
+      0.83164381980896,
+      0.3198712468147278,
+      0.2541431486606598,
+      0.2696976065635681,
+      0.35496896505355835,
+      0.48500609397888184,
+      0.8785078525543213,
+      0.5368262529373169,
+      0.9134219288825989,
+      0.6440489888191223,
+      0.30196768045425415,
+      0.8858827352523804,
+      0.45907995104789734,
+      0.4864165484905243,
+      0.30034229159355164,
+      0.3018221855163574,
+      0.602444589138031
+    ],
+    "pixel_accuracy": 0.920068085193634,
+    "mean_accuracy": 0.5930769443511963
+  }
+}

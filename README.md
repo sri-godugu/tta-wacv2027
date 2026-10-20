@@ -1,5 +1,23 @@
 # When Does Test-Time Adaptation Help? The Synthetic-to-Real Gap in Urban Driving Segmentation
 
+> **📄 Supplementary material: [`wacv_urbanstate_supplementary_ID25.pdf`](wacv_urbanstate_supplementary_ID25.pdf)**
+> (11 pages: pre-registration protocol, per-condition tables for every approach and architecture, robustness grids,
+> gating tables, the budget campaign with paired intervals, the sky-to-building analyses, qualitative strips, and
+> reproduction details). The main paper's references to "the supplementary" point to this document.
+
+## Quick navigation
+
+| What | Where |
+|---|---|
+| Supplementary PDF | [`wacv_urbanstate_supplementary_ID25.pdf`](wacv_urbanstate_supplementary_ID25.pdf) |
+| Paper claim → file → script | [`MANIFEST.md`](MANIFEST.md) |
+| Pre-registration documents and analysis log | [`preregistration/`](preregistration/) |
+| Per-condition results and analysis scripts | [`results/`](results/) |
+| Step-curve / learning-rate runs | [`results/stepcurve/`](results/stepcurve/) |
+| Seeded Cityscapes-C v2 (seeds, sha256, generator) | [`benchmark/cityscapes_c_v2/`](benchmark/cityscapes_c_v2/) |
+| Adaptation methods and evaluation code | [`code/`](code/) |
+| Figure scripts and rendered figures | [`figures/`](figures/) |
+
 Code, per-condition results, analysis scripts, pre-registration record and the seeded Cityscapes-C v2 benchmark
 for the paper of the same title (anonymous submission). The paper audits test-time adaptation (TTA) for semantic
 segmentation. It measures how adaptation benefit depends on baseline difficulty across 95 Cityscapes-C conditions,
@@ -12,6 +30,7 @@ Every number in the paper and supplementary traces to a released result file and
 ## Layout
 
 ```
+wacv_urbanstate_supplementary_ID25.pdf   supplementary material (11 pages)
 code/                      adaptation methods, models, data loaders, evaluation
   adaptation/              pda.py (PDA), tent.py, dua.py, pseudolabel.py (self-training), oracle.py (supervised reference)
   scripts/evaluate.py      single entry point for every evaluation run (flags recorded in each result's "config")

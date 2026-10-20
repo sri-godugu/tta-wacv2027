@@ -11,7 +11,7 @@ Scripts read only the released per-condition outputs; run them from `results/`.
 | §4 | slopes / R² across architectures (−0.192 / −0.273 / −0.193; 0.44 / 0.69 / 0.41) | `backbone_spine.json` | `backbone_spine.py` |
 | §4 | R² by mechanism (PDA 0.44, TENT 0.35, DUA 0.16) | `fit_robustness.json`, `dua_spine.json` | `fit_robustness.py`, `dua_spine.py` |
 | §5.1, Tab. 1 | 7/7 adverse below trend; per-condition residuals and paired bootstrap CIs (28 intervals) | `bootstrap_ci.json` | `bootstrap_ci.py` |
-| §5.1 | type-clustered bootstrap, all approaches: every CI excludes 0, all-7-below 98–100% | `clustered_bootstrap_all.json` | `clustered_bootstrap_all.py` |
+| §5.1 | type-clustered bootstrap, all approaches: every CI excludes 0, all-7-below 98–100% | `clustered_bootstrap_all.json` | `clustered_bootstrap.py` (routine), `clustered_bootstrap_all.py` (all approaches) |
 | §5.1 | matched difficulty is interpolation (4–9 neighbours within ±3 mIoU) | (printed) | `density_and_pin.py` |
 | §5.1 | ACDC fog stable across three seeds (−2.52 / −2.42 / −2.50) | `acdc_fog_pdarep2.json`, `acdc_fog_pdarep3.json`, `cm_acdc_fog_pdaonly.json` | — |
 | §5.2 | TENT / DUA / self-training replicate (means −2.63 / −4.92 / −2.42) | `fit_robustness.json`, `dua_spine.json` | `fit_robustness.py`, `dua_spine.py` |
@@ -20,7 +20,7 @@ Scripts read only the released per-condition outputs; run them from `results/`.
 | §6 | supervised reference: recoverability gap −0.10, signal gap +5.47; 1-step gate 61/95, 10-step 2/95 | `decomposition_s10.json`, `decomposition_s1.json` | `decomposition.py` |
 | §6 | budget control at ten steps (TENT +2.40 synthetic vs −1.90 real; PDA −0.22 vs −5.94) | `budget_control.json` | `budget_control.py` |
 | §6, Fig. 3 | step curve {1,2,3,5,10} and LR axis on Cityscapes-C v2: benefit and shortfall per budget | `stepcurve_final_all.json` | `stepcurve_analysis.py` |
-| §6 | paired budget differences (every increase over one step excludes 0) | `stepcurve_ci_final.json` | `stepcurve_ci.py` |
+| §6 | paired budget differences (every increase over one step excludes 0) | `stepcurve_ci.json` | `stepcurve_ci.py` |
 | §6 | synthetic-selected budget (PDA 2, TENT 10), label-selected bound (−7.43 / −6.34), LR control | `prereg_pda_final.json`, `prereg_tent_ora_final.json` | `prereg_p2_p4_p5.py` |
 | §6 | supervised reference rises with budget (+1.16 → +5.82 real) | `stepcurve_final_all.json` | `stepcurve_analysis.py` |
 | §6 | sky→building at one step (11.9 / 26.0 / 28.7%; 100/100 images; −1.47 of −2.49) | `per_image_cm/acdc_fog_*.npz` | `fog_confusion.py`, `sky_building_scope.py` |
@@ -43,6 +43,7 @@ Scripts read only the released per-condition outputs; run them from `results/`.
 | second real dataset placement (BDD100K, Foggy Zurich) | `second_dataset_spine.py` output (printed) | `second_dataset_spine.py` |
 | cross-dataset contrast check (**EXPLORATORY**, not a registered claim) | `xdataset_contrast_exploratory.json` | `xdataset_contrast_exploratory.py` |
 | per-figure inputs | `figures/data/` | `figures/build_v2_data.py`, `figures/make_grid.py` |
+| qualitative strips (ACDC fog, pre-registered indices 14 / 42 / 51), with the image-identity provenance check | `figures/data/strip/` (saved predictions + ground truth) | `figures/render_strip.py` |
 
 ## Raw run naming
 

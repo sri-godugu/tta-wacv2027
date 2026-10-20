@@ -18,6 +18,15 @@
 | Adaptation methods and evaluation code | [`code/`](code/) |
 | Figure scripts and rendered figures | [`figures/`](figures/) |
 
+### Names used in the supplementary
+
+| Supplementary says | In this repository |
+|---|---|
+| `clustered_bootstrap.py` | [`results/clustered_bootstrap.py`](results/clustered_bootstrap.py) (the routine; primary PDA run). The per-approach and per-architecture intervals come from [`results/clustered_bootstrap_all.py`](results/clustered_bootstrap_all.py), which imports it unmodified and writes `clustered_bootstrap_all.json` |
+| `stepcurve_ci.json` | [`results/stepcurve_ci.json`](results/stepcurve_ci.json) (from `stepcurve_ci.py`); `build_v2_data.py` copies it verbatim to `figures/data/stepcurve_ci.json` |
+| `render_strip.py` (with the provenance checks) | [`figures/render_strip.py`](figures/render_strip.py); every saved label map is checked against its ground truth before drawing. `figures/fig5_strip.py` is an alias |
+| `csc_v2_release/` | [`benchmark/cityscapes_c_v2/`](benchmark/cityscapes_c_v2/) (generator, root seed, 47,500-row seed + SHA-256 manifest, environment record, README, SHA256SUMS) |
+
 Code, per-condition results, analysis scripts, pre-registration record and the seeded Cityscapes-C v2 benchmark
 for the paper of the same title (anonymous submission). The paper audits test-time adaptation (TTA) for semantic
 segmentation. It measures how adaptation benefit depends on baseline difficulty across 95 Cityscapes-C conditions,
@@ -44,8 +53,9 @@ results/                   one flat directory, exactly as the analysis scripts e
   stepcurve/{h200,v100}/   step-curve / learning-rate runs on Cityscapes-C v2 (synthetic per severity, real per condition,
                            real per-image confusion matrices, qualitative-strip predictions); one GPU pool per method
 benchmark/cityscapes_c_v2/ seed + sha256 manifest, environment record and generator for the seeded benchmark
+                           (called csc_v2_release/ in the supplementary)
 preregistration/           dated pre-registration documents and the append-only analysis notes
-figures/                   figure scripts (fig1-fig5), their input data, and the rendered PDFs
+figures/                   figure scripts (fig1-fig4, render_strip.py), their input data, and the rendered PDFs
 ```
 
 ## Setup
@@ -87,14 +97,15 @@ python dua_spine.py                       # DUA difficulty law and shortfall
 python decomposition.py                   # supervised-reference decomposition (1 and 10 steps)
 python budget_control.py                  # unsupervised methods at the supervised reference's budget
 python policy_eval.py; python policy_loo.py   # synthetic-calibrated and leave-one-condition-out gates
-python clustered_bootstrap_all.py         # corruption-type-clustered bootstrap, all approaches and architectures
+python clustered_bootstrap.py             # corruption-type-clustered bootstrap (primary PDA run)
+python clustered_bootstrap_all.py         # the same routine, imported unmodified, for every approach and architecture
 python stepcurve_analysis.py stepcurve --json stepcurve_final_all.json   # step curve, trend refit at every budget
 python prereg_p2_p4_p5.py stepcurve       # pre-registered step-curve predictions
-python stepcurve_ci.py stepcurve --B 2000 --json stepcurve_ci_final.json # joint bootstrap, paired budget differences
+python stepcurve_ci.py stepcurve --B 2000 --json stepcurve_ci.json # joint bootstrap, paired budget differences
 ```
 
-Figures: `cd figures && python build_v2_data.py ../results/stepcurve --ci ../results/stepcurve_ci_final.json`
-(from `figures/`), then `python fig1_teaser.py`, `fig2_arch.py`, `fig3_decomposition.py`, `fig4_stepcurve.py`, `fig5_strip.py data/strip out`.
+Figures: `cd figures && python build_v2_data.py ../results/stepcurve --ci ../results/stepcurve_ci.json`
+(from `figures/`), then `python fig1_teaser.py`, `fig2_arch.py`, `fig3_decomposition.py`, `fig4_stepcurve.py`, `render_strip.py data/strip out` (`fig5_strip.py` is an alias).
 
 ## Cityscapes-C v2 (seeded, per-image reproducible)
 

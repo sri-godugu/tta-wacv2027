@@ -114,7 +114,7 @@ $\lambda=0$") closes it.
   paired test; legend above the panels; shorter titles and y-label; (c) key moved to its empty corner. Re-run
   `python build_v2_data.py <results/stepcurve> --ci <stepcurve_ci.json> && python fig4_stepcurve.py` as runs land;
   incomplete settings drop out instead of being drawn.
-- **Fig. 5 qualitative strip (new):** `python fig5_strip.py data/strip out`. Pre-registered ACDC-fog indices 14/42/51,
+- **Fig. 5 qualitative strip (new):** `python render_strip.py data/strip out` (alias: `fig5_strip.py`). Pre-registered ACDC-fog indices 14/42/51,
   predictions from the same pass as the scored metrics, index→image proven against the GT files; the sky-fate palette is
   validated (CVD ΔE ≥ 9.2). The supervised@10 column fills in once `strip_ora_s10…npz` is in `data/strip/`.
 - `fig4_interim.py` / `fig_stepcurve_interim.pdf` are superseded by `fig4_stepcurve.py` and kept only for reference.

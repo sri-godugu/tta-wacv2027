@@ -1,0 +1,14 @@
+{
+  "adapt_calls": 250,
+  "calls_all_params_identical": 250,
+  "calls_affine_identical": 250,
+  "affine_tensors_per_call": 120,
+  "params_changed_total": 0,
+  "nonfinite_params_total": 0,
+  "calls_running_stats_moved": 250,
+  "max_abs_running_mean_delta": 5.184558868408203,
+  "max_abs_running_var_delta": 76.2354736328125,
+  "eval_status": "ok",
+  "valid": true,
+  "stats_pathway_active": true
+}

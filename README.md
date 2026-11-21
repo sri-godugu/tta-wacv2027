@@ -26,6 +26,7 @@
 | `stepcurve_ci.json` | [`results/stepcurve_ci.json`](results/stepcurve_ci.json) (from `stepcurve_ci.py`); `build_v2_data.py` copies it verbatim to `figures/data/stepcurve_ci.json` |
 | `render_strip.py` (with the provenance checks) | [`figures/render_strip.py`](figures/render_strip.py); every saved label map is checked against its ground truth before drawing. `figures/fig5_strip.py` is an alias |
 | `csc_v2_release/` | [`benchmark/cityscapes_c_v2/`](benchmark/cityscapes_c_v2/) (generator, root seed, 47,500-row seed + SHA-256 manifest, environment record, README, SHA256SUMS) |
+| `v2s1_lr0` outputs (statistics-only control) | `results/stepcurve/h200/pda_s1_lr0_*` (103 runs, 8 per-image confusion matrices in `per_image_cm/`, bit-identity records in `identity/`); analysis [`results/lr0_control_analysis.py`](results/lr0_control_analysis.py) → [`results/lr0_control.json`](results/lr0_control.json) |
 
 Code, per-condition results, analysis scripts, pre-registration record and the seeded Cityscapes-C v2 benchmark
 for the paper of the same title (anonymous submission). The paper audits test-time adaptation (TTA) for semantic
@@ -102,7 +103,13 @@ python clustered_bootstrap_all.py         # the same routine, imported unmodifie
 python stepcurve_analysis.py stepcurve --json stepcurve_final_all.json   # step curve, trend refit at every budget
 python prereg_p2_p4_p5.py stepcurve       # pre-registered step-curve predictions
 python stepcurve_ci.py stepcurve --B 2000 --json stepcurve_ci.json # joint bootstrap, paired budget differences
+python lr0_control_analysis.py stepcurve --json lr0_control.json   # statistics-only control (registered P7a/P7b)
 ```
+
+The statistics-only control runs PDA at one step with `--lr_pda 0` through `code/scripts/eval_lr0_identity.py`, which
+wraps `evaluate.py` unchanged and checks every parameter bitwise before and after each `adapt()` call (the registered
+sanity check; records in `results/stepcurve/h200/identity/`). The worker is `code/scripts/stepcurve_worker_lr0.sh`:
+`bash code/scripts/stepcurve_worker_lr0.sh pda 1 0 <target> h200`.
 
 Figures: `cd figures && python build_v2_data.py ../results/stepcurve --ci ../results/stepcurve_ci.json`
 (from `figures/`), then `python fig1_teaser.py`, `fig2_arch.py`, `fig3_decomposition.py`, `fig4_stepcurve.py`, `render_strip.py data/strip out` (`fig5_strip.py` is an alias).

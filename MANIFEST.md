@@ -43,6 +43,7 @@ Scripts read only the released per-condition outputs; run them from `results/`.
 | second real dataset placement (BDD100K, Foggy Zurich) | `second_dataset_spine.py` output (printed) | `second_dataset_spine.py` |
 | cross-dataset contrast check (**EXPLORATORY**, not a registered claim) | `xdataset_contrast_exploratory.json` | `xdataset_contrast_exploratory.py` |
 | per-figure inputs | `figures/data/` | `figures/build_v2_data.py`, `figures/make_grid.py` |
+| statistics-only control, registered (P7a R_syn 0.985, P7b Δ −0.01; shortfall −5.39 [−7.75, −3.60]; gradient +0.05; fog sky→building 25.9%) | `lr0_control.json`, `stepcurve/h200/pda_s1_lr0_*`, `stepcurve/h200/identity/` | `lr0_control_analysis.py` |
 | qualitative strips (ACDC fog, pre-registered indices 14 / 42 / 51), with the image-identity provenance check | `figures/data/strip/` (saved predictions + ground truth) | `figures/render_strip.py` |
 
 ## Raw run naming
@@ -54,6 +55,7 @@ Scripts read only the released per-condition outputs; run them from `results/`.
 | `r101_*`, `fcn50_*` | architecture replications (synthetic per type, real per condition) |
 | `oracle_s{1,10}_*`, `s10_{pdaonly,tent}_*` | supervised reference and budget control (v1) |
 | `stepcurve/h200/{van,pda,ora}_*`, `stepcurve/v100/{van,tent}_*` | step curve / LR axis on Cityscapes-C v2; `_v2pertype_<type>_sev<s>` (synthetic), `_<condition>` (real) |
+| `stepcurve/h200/pda_s1_lr0_*` | statistics-only control (PDA, one step, learning rate 0); same naming |
 
 Earlier exploratory runs from the project's method-development phase (e.g. SegFormer variants, RobustNet) are kept for
 provenance; only the files listed above back claims in the paper.

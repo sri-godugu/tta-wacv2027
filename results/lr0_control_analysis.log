@@ -1,0 +1,37 @@
+[0] identity check: 103/103 cells recorded, 24089 adapt() calls checked; not bit-identical: none; running stats unmoved: none; missing: none
+[1] lr 0 (stats only)  nSyn 95 nReal 7  slope -0.194  R2 0.45  syn +4.01  real +0.30  shortfall -5.39  below 7/7  probe resid -4.86
+[1] PDA@1 lr 1e-3      nSyn 95 nReal 7  slope -0.192  R2 0.44  syn +4.07  real +0.35  shortfall -5.38  below 7/7  probe resid -4.88
+[2] P7a: R_syn = +4.01 / 4.07 = 0.985 (threshold 0.80; x >= +3.26) -> HOLDS
+    P7b: Delta_short = -5.39 - (-5.38) = -0.01 (|.| <= 1.0; y in [-6.38, -4.38]) -> HOLDS
+    H_BN SUPPORTED   (unrounded reference: R 0.987, Delta -0.01; same verdict: True)
+    per-image CMs reproduce every reported real mIoU (max |diff| 7.8e-06)
+[3] registered paired joint bootstrap, B=2000 (types x images; seed 0, stepcurve_ci.py sequence)
+    PDA@1  shortfall -5.38 [-7.74, -3.60]  syn +4.07 [+2.30, +5.95]  real +0.35 [-0.07, +0.92]  all 7 below: 2000/2000 = 1.0
+    lr 0   shortfall -5.39 [-7.75, -3.60]  syn +4.01 [+2.24, +5.90]  real +0.30 [-0.11, +0.86]  all 7 below: 2000/2000 = 1.0
+[6] pathway split: statistics (lr 0) | statistics + gradient (PDA@1) | gradient contribution, paired 95% CI
+    synthetic mean benefit    +4.01 |  +4.07 |  +0.05 [+0.04, +0.07]
+    real mean benefit (7)     +0.30 |  +0.35 |  +0.05 [+0.03, +0.08]
+    real shortfall            -5.39 |  -5.38 |  +0.01 [-0.02, +0.04]
+    Delta_short (lr 0 - PDA@1) -0.01 [-0.04, +0.02]
+[4] supplementary paired image-level bootstrap, B=10000 (fits fixed)
+    PDA@1  shortfall -5.38 [-5.99, -4.94]  all 7 below: 10000/10000 = 1.0
+    lr 0   shortfall -5.39 [-6.01, -4.95]  all 7 below: 10000/10000 = 1.0
+    Delta_short (lr 0 - PDA@1) -0.01 [-0.04, +0.01]
+      acdc_fog    lr0 resid  -4.58 [ -5.89,  -2.59]
+      acdc_night  lr0 resid  -7.77 [ -8.45,  -7.02]
+      acdc_rain   lr0 resid  -4.63 [ -6.77,  -3.18]
+      acdc_snow   lr0 resid  -5.08 [ -6.05,  -3.68]
+      bdd_rainy   lr0 resid  -5.99 [ -7.03,  -4.88]
+      bdd_snowy   lr0 resid  -3.75 [ -5.29,  -2.88]
+      fz_fog      lr0 resid  -5.94 [ -7.99,  -4.27]
+[5] GT-sky -> building (%) / sky IoU, summed per-image CMs, same pool (h200)
+    acdc_fog    van  11.9/ 84.7  lr0  25.9/ 68.9  PDA@1  26.0/ 68.8  lr0 images above van: 100/100
+    acdc_night  van  69.8/  5.7  lr0  47.0/  3.1  PDA@1  46.8/  3.0  lr0 images above van: 11/105
+    acdc_rain   van   7.6/ 89.7  lr0  21.3/ 73.7  PDA@1  21.2/ 73.8  lr0 images above van: 99/100
+    acdc_snow   van  12.4/ 79.3  lr0  22.9/ 68.2  PDA@1  22.7/ 68.3  lr0 images above van: 99/100
+    bdd_rainy   van   8.7/ 78.6  lr0  11.5/ 77.1  PDA@1  11.3/ 77.3  lr0 images above van: 26/39
+    bdd_snowy   van   6.1/ 82.9  lr0   8.6/ 83.7  PDA@1   8.6/ 83.7  lr0 images above van: 53/107
+    fz_fog      van  76.1/ 21.7  lr0  82.8/ 14.5  PDA@1  82.9/ 14.4  lr0 images above van: 26/40
+    bdd_clear   van   7.5/ 78.8  lr0  10.0/ 79.8  PDA@1  10.0/ 79.8  lr0 images above van: 39/79
+    (published v1 ACDC fog: vanilla 11.9%, PDA@1 26.0%, DUA 28.7%)
+wrote lr0_control.json

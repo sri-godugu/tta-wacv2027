@@ -135,3 +135,84 @@ supported"); those oracle lines are descriptive and are NOT verdicts. The oracle
 +1.16 → +5.82). Consistent with v1 (real ceilings below the synthetic ceiling line). Consequence for Fig. 3: a shortfall-axis panel would show
 the supervised line falling alongside PDA/TENT. The dissociation the figure is meant to show (unsupervised real benefit falls, supervised real
 benefit rises) appears on the real-BENEFIT axis.
+
+### 2026-11-20 13:08 EST (cluster clock) — BN-statistics control (P7a/P7b): registered prediction restated before any run — **REGISTERED**
+Copied verbatim from preregistration_step_curve.md, addendum dated 2026-10-19 05:20 EDT (lines 131–142), before any lr-0 run was launched or any output inspected. Nothing below is edited.
+
+**Test statistics.** (i) R_syn = mean synthetic benefit(stats-only) / mean synthetic benefit(PDA@1, lr 1e-3) = x / 4.07.
+(ii) Δ_short = shortfall(stats-only) − shortfall(PDA@1) = y − (−5.38), with the synthetic trend refit on the stats-only grid,
+exactly as for every other setting.
+
+**Prediction (H_BN supported iff BOTH hold):**
+- **P7a:** R_syn ≥ 0.80, i.e. the stats-only pass recovers at least 80% of PDA@1's synthetic benefit (x ≥ +3.26).
+- **P7b:** |Δ_short| ≤ 1.0 mIoU, i.e. the stats-only real shortfall lies in [−6.38, −4.38].
+
+**Decision.** Both hold → "PDA's one-step regime is dominated by BN-statistic recalibration", tying it to the DUA/saturation
+results. Either fails → reported as not supported; the one-step effect then needs the gradient step, and the LR
+insensitivity stays an observation. Either way it is reported, with its paired joint-bootstrap CI (B=2000, the same method
+as the step curve), and no other variants (other K, other methods) are added to this registration.
+
+### 2026-11-20 16:22 EST (cluster clock) — BN-statistics control (P7a/P7b): result and verdict — **REGISTERED**
+Registration: preregistration_step_curve.md, addendum 2026-10-19 05:20 EDT; prediction restated verbatim above at 13:08 EST, before any run.
+**Runs.** PDA, one step, `--lr_pda 0`, otherwise byte-identical flags to `pda_s1_lr0.001` (K 4, clean_final, bn, bs 2, seed 0, threshold 0.45).
+- Pool and scope: H200 only (4 drainers, all on one node, with an H200 guard), 14:40–16:19 EST. 103/103 cells (95 Cityscapes-C v2 plus 8 real), 0 failed, 0 retried.
+- Outputs: `results/stepcurve/h200/pda_s1_lr0_*`. Benefit is paired against the existing h200 `van_*` runs; vanilla was not rerun.
+- Disclosure: before the scored runs, the identity wrapper was tested on one A30, Foggy Zurich only, at lr 0 and lr 1e-3, written to `logs/lr0_test/`. That test is not a scored result and is not used anywhere.
+
+**Registered sanity check: PASSED.** `eval_lr0_identity.py` compared every model parameter bitwise before and after each adapt() call, inside the scored pass. 24,089 adapt() calls were checked across 103/103 cells. No parameter changed, none was non-finite, and the BN running statistics moved in every call.
+
+**Primary statistics** (`stepcurve_analysis.analyse`, trend refit on the lr-0 grid, n = 95):
+- lr 0: slope −0.194, R² 0.45; mean synthetic benefit x = +4.01; mean real benefit (7 adverse) +0.30; mean real shortfall y = −5.39; 7/7 below trend; BDD-clear probe residual −4.86.
+- PDA@1 (lr 1e-3, same pool): +4.07 / +0.35 / −5.38, 7/7.
+
+**Verdict.**
+- **P7a SUPPORTED:** R_syn = 4.01 / 4.07 = 0.985 ≥ 0.80 (x ≥ +3.26).
+- **P7b SUPPORTED:** Δ_short = −5.39 − (−5.38) = −0.01; |Δ_short| ≤ 1.0 (y in [−6.38, −4.38]).
+- **H_BN SUPPORTED:** PDA's one-step regime is dominated by BN-statistic recalibration.
+- Using the unrounded PDA@1 reference instead gives R 0.987 and Δ −0.01, the same verdict.
+
+**Registered interval** (paired joint bootstrap, B = 2000, types × images; the seed-0 sequence of stepcurve_ci.py, under which PDA@1 reproduces its published −5.38 [−7.74, −3.60] exactly):
+- lr-0 shortfall −5.39 [−7.75, −3.60]; all 7 below in 2000/2000 resamples.
+- Paired Δ_short (lr 0 − PDA@1) −0.01 [−0.04, +0.02].
+
+**Supplementary interval** (paired image-level bootstrap, B = 10⁴, each fit held fixed, bootstrap_ci.py scheme):
+- lr-0 shortfall −5.39 [−6.01, −4.95]; all 7 below in 10000/10000 resamples.
+- Δ_short −0.01 [−0.04, +0.01].
+- Per-condition lr-0 residuals (95% CI):
+
+  | Condition | Residual | 95% CI |
+  |---|---|---|
+  | ACDC fog | −4.58 | [−5.89, −2.59] |
+  | ACDC night | −7.77 | [−8.45, −7.02] |
+  | ACDC rain | −4.63 | [−6.77, −3.18] |
+  | ACDC snow | −5.08 | [−6.05, −3.68] |
+  | BDD rainy | −5.99 | [−7.03, −4.88] |
+  | BDD snowy | −3.75 | [−5.29, −2.88] |
+  | Foggy Zurich | −5.94 | [−7.99, −4.27] |
+
+**Pathway split at one step**, all three from the same pool. The gradient's contribution is PDA@1 minus lr 0, with a paired joint-bootstrap 95% CI:
+
+| Quantity | Statistics only (lr 0) | Statistics + gradient (PDA@1) | Gradient contribution |
+|---|---|---|---|
+| Synthetic mean benefit | +4.01 | +4.07 | +0.05 [+0.04, +0.07] |
+| Real mean benefit | +0.30 | +0.35 | +0.05 [+0.03, +0.08] |
+| Real shortfall | −5.39 | −5.38 | +0.01 [−0.02, +0.04] |
+
+The statistics pathway therefore carries 98.7% (unrounded ratio) of PDA@1's synthetic benefit and essentially all of its real shortfall. The gradient step's contribution is nonzero but about 0.05 mIoU.
+
+**Sky→building on ACDC fog** (share of GT-sky pixels predicted as building; summed per-image CMs; h200 pool):
+
+| Setting | Sky→building | Sky IoU | Note |
+|---|---|---|---|
+| Vanilla | 11.9% | 84.7 | |
+| lr 0 | 25.9% | 68.9 | rate above vanilla in 100/100 images |
+| PDA@1 | 26.0% | 68.8 | |
+
+The published v1 values are vanilla 11.9%, PDA@1 26.0% and DUA 28.7%. The one-step sky→building merge is therefore produced by the statistics refresh alone. The same pattern holds on ACDC rain (7.6 → 21.3 vs 21.2) and ACDC snow (12.4 → 22.9 vs 22.7).
+
+**Scope** (as registered: no other variants, other K values or other methods were added):
+- The result concerns PDA at one step.
+- It does not test what drives the growth of the shortfall at more than one step, where the gradient has more updates to act on. That remains as previously reported.
+- The October LR-insensitivity observation is consistent with this result: at one step the gradient contributes about 0.05 mIoU, so a 10× LR change has little to move.
+
+Files: `results/lr0_control_analysis.py`, `lr0_control.json`, `lr0_control_analysis.log`; identity records in `results/stepcurve/h200/identity/`.
